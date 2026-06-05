@@ -132,6 +132,133 @@ textarea {
   scroll-margin-top: 110px;
 }
 
+.scroll-visual {
+  position: relative;
+  min-height: 360px;
+  margin: 24px 0 8px;
+  overflow: hidden;
+  border-block: 1px solid rgba(255, 255, 255, 0.07);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.scroll-visual::before,
+.scroll-visual::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+}
+
+.scroll-visual::before {
+  background:
+    linear-gradient(180deg, rgba(5, 6, 7, 0.84), rgba(5, 6, 7, 0.22) 45%, rgba(5, 6, 7, 0.88)),
+    linear-gradient(90deg, rgba(5, 6, 7, 0.94), transparent 35%, transparent 65%, rgba(5, 6, 7, 0.94));
+}
+
+.scroll-visual::after {
+  opacity: 0.48;
+  background-image:
+    linear-gradient(rgba(100, 244, 223, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 244, 223, 0.16) 1px, transparent 1px);
+  background-size: 72px 72px;
+  transform: perspective(880px) rotateX(60deg) scale(1.4);
+  transform-origin: bottom center;
+}
+
+.visual-network {
+  background-image:
+    linear-gradient(118deg, rgba(100, 244, 223, 0.22), transparent 28%),
+    linear-gradient(242deg, rgba(140, 255, 184, 0.18), transparent 32%),
+    repeating-linear-gradient(126deg, transparent 0 54px, rgba(100, 244, 223, 0.18) 55px, transparent 56px),
+    linear-gradient(135deg, #071112, #030506 68%);
+}
+
+.visual-expansion {
+  background-image:
+    linear-gradient(105deg, rgba(245, 197, 107, 0.14), transparent 24%),
+    linear-gradient(252deg, rgba(100, 244, 223, 0.22), transparent 36%),
+    repeating-linear-gradient(32deg, transparent 0 42px, rgba(140, 255, 184, 0.14) 43px, transparent 44px),
+    linear-gradient(135deg, #050607, #0a1514 62%, #050607);
+}
+
+.visual-panel {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: min(100%, var(--max));
+  margin: 0 auto;
+}
+
+.visual-panel span {
+  position: absolute;
+  display: block;
+  border: 1px solid rgba(100, 244, 223, 0.26);
+  border-radius: 50%;
+}
+
+.visual-panel span::before {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--cyan);
+  content: "";
+}
+
+.visual-network .visual-panel span:nth-child(1) {
+  top: 18%;
+  left: 8%;
+  width: 310px;
+  height: 132px;
+  transform: rotate(18deg);
+}
+
+.visual-network .visual-panel span:nth-child(2) {
+  top: 30%;
+  right: 12%;
+  width: 440px;
+  height: 180px;
+  border-color: rgba(140, 255, 184, 0.2);
+  transform: rotate(-16deg);
+}
+
+.visual-network .visual-panel span:nth-child(3) {
+  right: 34%;
+  bottom: 13%;
+  width: 260px;
+  height: 92px;
+  border-color: rgba(245, 197, 107, 0.18);
+  transform: rotate(28deg);
+}
+
+.visual-expansion .visual-panel span:nth-child(1) {
+  top: 14%;
+  right: 4%;
+  width: 380px;
+  height: 138px;
+  transform: rotate(-20deg);
+}
+
+.visual-expansion .visual-panel span:nth-child(2) {
+  bottom: 18%;
+  left: 10%;
+  width: 520px;
+  height: 210px;
+  border-color: rgba(140, 255, 184, 0.18);
+  transform: rotate(15deg);
+}
+
+.visual-expansion .visual-panel span:nth-child(3) {
+  top: 34%;
+  left: 38%;
+  width: 240px;
+  height: 86px;
+  border-color: rgba(245, 197, 107, 0.2);
+  transform: rotate(-8deg);
+}
+
 .hero {
   display: grid;
   min-height: 100vh;
@@ -674,6 +801,11 @@ textarea:focus {
   .why-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .scroll-visual {
+    min-height: 300px;
+    background-attachment: scroll;
+  }
 }
 
 @media (max-width: 720px) {
@@ -724,6 +856,19 @@ textarea:focus {
   .section {
     width: min(calc(100% - 28px), var(--max));
     padding: 78px 0;
+  }
+
+  .scroll-visual {
+    min-height: 240px;
+    margin: 8px 0 0;
+  }
+
+  .scroll-visual::after {
+    background-size: 54px 54px;
+  }
+
+  .visual-panel span {
+    opacity: 0.72;
   }
 
   .hero {
