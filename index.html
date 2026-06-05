@@ -63,29 +63,37 @@
 
         <div class="hero-visual" aria-hidden="true">
           <div class="visual-grid"></div>
-          <div class="orbit orbit-one"></div>
-          <div class="orbit orbit-two"></div>
-          <svg class="orbit-motion" viewBox="0 0 600 560" aria-hidden="true">
-            <g transform="translate(300 280) rotate(28) scale(1 .72)">
-              <circle class="moving-node cyan" cx="230" cy="0" r="7">
-                <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="18s" repeatCount="indefinite"></animateTransform>
-              </circle>
-            </g>
-            <g transform="translate(300 280) rotate(28) scale(1 .72)">
-              <circle class="moving-node green" cx="230" cy="0" r="7">
-                <animateTransform attributeName="transform" type="rotate" from="210 0 0" to="570 0 0" dur="23s" repeatCount="indefinite"></animateTransform>
-              </circle>
-            </g>
-            <g transform="translate(300 292) rotate(-26) scale(1 .64)">
-              <circle class="moving-node amber" cx="168" cy="0" r="7">
-                <animateTransform attributeName="transform" type="rotate" from="130 0 0" to="490 0 0" dur="20s" repeatCount="indefinite"></animateTransform>
-              </circle>
-            </g>
-            <g transform="translate(390 375) rotate(18) scale(1 .68)">
-              <circle class="moving-node cyan" cx="118" cy="0" r="7">
-                <animateTransform attributeName="transform" type="rotate" from="60 0 0" to="420 0 0" dur="16s" repeatCount="indefinite"></animateTransform>
-              </circle>
-            </g>
+          <svg class="orbit-map" viewBox="0 0 600 560" aria-hidden="true">
+            <defs>
+              <path id="orbit-market" d="M 514.7 391.6 C 477.1 462.3, 357.6 472.4, 247.9 414 C 138.2 355.7, 79.7 251.1, 117.3 180.4 C 154.9 109.7, 274.4 99.6, 384.1 158 C 493.8 216.3, 552.3 320.9, 514.7 391.6 Z"></path>
+              <path id="orbit-growth" d="M 497.8 391.2 C 465.6 451.7, 364.4 460.7, 271.8 411.5 C 179.1 362.2, 130.1 273.3, 162.2 212.8 C 194.4 152.3, 295.6 143.3, 388.2 192.5 C 480.9 241.8, 529.9 330.7, 497.8 391.2 Z"></path>
+              <path id="orbit-supply" d="M 529.8 428.9 C 515.5 473.1, 450.2 491.4, 384 469.9 C 317.9 448.4, 275.8 395.2, 290.2 351.1 C 304.5 306.9, 369.8 288.6, 436 310.1 C 502.1 331.6, 544.2 384.8, 529.8 428.9 Z"></path>
+              <path id="orbit-core" d="M 470.3 227.7 C 497.4 283.3, 453 360.7, 371.1 400.7 C 289.2 440.6, 200.8 427.9, 173.7 372.3 C 146.6 316.7, 191 239.3, 272.9 199.3 C 354.8 159.4, 443.2 172.1, 470.3 227.7 Z"></path>
+            </defs>
+            <use class="orbit-line cyan-line" href="#orbit-market"></use>
+            <use class="orbit-line cyan-line soft" href="#orbit-growth"></use>
+            <use class="orbit-line green-line" href="#orbit-supply"></use>
+            <use class="orbit-line amber-line" href="#orbit-core"></use>
+            <circle class="moving-node cyan" r="6">
+              <animateMotion dur="18s" repeatCount="indefinite" rotate="0">
+                <mpath href="#orbit-market"></mpath>
+              </animateMotion>
+            </circle>
+            <circle class="moving-node green" r="6">
+              <animateMotion dur="23s" begin="-7s" repeatCount="indefinite" rotate="0">
+                <mpath href="#orbit-growth"></mpath>
+              </animateMotion>
+            </circle>
+            <circle class="moving-node amber" r="6">
+              <animateMotion dur="20s" begin="-11s" repeatCount="indefinite" rotate="0">
+                <mpath href="#orbit-core"></mpath>
+              </animateMotion>
+            </circle>
+            <circle class="moving-node cyan" r="6">
+              <animateMotion dur="16s" begin="-4s" repeatCount="indefinite" rotate="0">
+                <mpath href="#orbit-supply"></mpath>
+              </animateMotion>
+            </circle>
           </svg>
           <div class="data-card card-a">
             <span>Marketplace Signals</span>
