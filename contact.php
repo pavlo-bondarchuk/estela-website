@@ -72,6 +72,15 @@ if ($isPost) {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://estela-partner.com/">
+    <meta property="og:title" content="Estela LLC | E-Commerce Growth Experts">
+    <meta property="og:description" content="Launch, scale, and optimize sales across Amazon and global online marketplaces.">
+    <meta property="og:image" content="https://estela-partner.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://estela-partner.com/og-image.png">
     <title><?php echo $sent ? 'Thank You' : 'Request Error'; ?> | Estela LLC</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
