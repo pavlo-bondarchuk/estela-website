@@ -77,9 +77,81 @@ if ($isPost) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+      body.result-page {
+        display: grid;
+        min-height: 100vh;
+        place-items: center;
+        margin: 0;
+        padding: 28px;
+        background:
+          radial-gradient(circle at 72% 8%, rgba(100, 244, 223, 0.14), transparent 28rem),
+          linear-gradient(180deg, #050607 0%, #07100f 48%, #050607 100%);
+        color: #f3f7f6;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      body.result-page::before {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        content: "";
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+        background-size: 44px 44px;
+      }
+
+      .result-card {
+        display: grid;
+        width: min(720px, 100%);
+        gap: 20px;
+        padding: clamp(28px, 6vw, 54px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        background:
+          linear-gradient(145deg, rgba(100, 244, 223, 0.1), transparent 34%),
+          rgba(8, 13, 15, 0.94);
+        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.36);
+      }
+
+      .result-card h1 {
+        margin: 0;
+        font-size: clamp(42px, 8vw, 72px);
+        line-height: 1;
+        letter-spacing: 0;
+      }
+
+      .result-card p {
+        max-width: 560px;
+        margin: 0;
+        color: #a7b5b2;
+        line-height: 1.7;
+      }
+
+      .result-card .eyebrow {
+        margin: 6px 0 -6px;
+        color: #8cffb8;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .result-card .button {
+        width: fit-content;
+        margin-top: 8px;
+      }
+
+      .result-card a:not(.button) {
+        color: #f3f7f6;
+        font-weight: 700;
+      }
+    </style>
   </head>
-  <body class="thank-you-page">
-    <main class="thank-you-card">
+  <body class="result-page">
+    <main class="result-card">
       <a class="brand" href="index.html" aria-label="Estela home">
         <span class="brand-mark">E</span>
         <span>Estela</span>
