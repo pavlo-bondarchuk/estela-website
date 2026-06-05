@@ -56,17 +56,3 @@ document.querySelectorAll("[data-dialog-close]").forEach((button) => {
     button.closest("dialog").close();
   });
 });
-
-document.querySelectorAll(".contact-form").forEach((form) => {
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const submit = form.querySelector("button[type='submit']");
-    submit.textContent = "Request Sent";
-    submit.disabled = true;
-    setTimeout(() => {
-      submit.textContent = "Send Request";
-      submit.disabled = false;
-      form.reset();
-    }, 1800);
-  });
-});

@@ -253,7 +253,7 @@
             <span>Monday - Friday · 09:00 - 18:00</span>
           </address>
         </div>
-        <form class="contact-form" action="#" method="post">
+        <form class="contact-form" action="contact.php" method="post">
           <label>
             Name
             <input type="text" name="name" autocomplete="name" required>
@@ -275,8 +275,12 @@
             <textarea name="message" rows="5" required></textarea>
           </label>
           <label class="captcha full">
-            <input type="checkbox" required>
+            <input type="checkbox" name="captcha" value="yes" required>
             <span>I am not a robot</span>
+          </label>
+          <label class="form-website" aria-hidden="true">
+            Website
+            <input type="text" name="website" tabindex="-1" autocomplete="off">
           </label>
           <button class="button primary full" type="submit">Send Request</button>
         </form>
