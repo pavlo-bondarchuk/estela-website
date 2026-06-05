@@ -65,10 +65,28 @@
           <div class="visual-grid"></div>
           <div class="orbit orbit-one"></div>
           <div class="orbit orbit-two"></div>
-          <div class="node node-a"></div>
-          <div class="node node-b"></div>
-          <div class="node node-c"></div>
-          <div class="node node-d"></div>
+          <svg class="orbit-motion" viewBox="0 0 600 560" aria-hidden="true">
+            <g transform="translate(300 280) rotate(28) scale(1 .72)">
+              <circle class="moving-node cyan" cx="230" cy="0" r="7">
+                <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="18s" repeatCount="indefinite"></animateTransform>
+              </circle>
+            </g>
+            <g transform="translate(300 280) rotate(28) scale(1 .72)">
+              <circle class="moving-node green" cx="230" cy="0" r="7">
+                <animateTransform attributeName="transform" type="rotate" from="210 0 0" to="570 0 0" dur="23s" repeatCount="indefinite"></animateTransform>
+              </circle>
+            </g>
+            <g transform="translate(300 292) rotate(-26) scale(1 .64)">
+              <circle class="moving-node amber" cx="168" cy="0" r="7">
+                <animateTransform attributeName="transform" type="rotate" from="130 0 0" to="490 0 0" dur="20s" repeatCount="indefinite"></animateTransform>
+              </circle>
+            </g>
+            <g transform="translate(390 375) rotate(18) scale(1 .68)">
+              <circle class="moving-node cyan" cx="118" cy="0" r="7">
+                <animateTransform attributeName="transform" type="rotate" from="60 0 0" to="420 0 0" dur="16s" repeatCount="indefinite"></animateTransform>
+              </circle>
+            </g>
+          </svg>
           <div class="data-card card-a">
             <span>Marketplace Signals</span>
             <strong>Visibility + Conversion</strong>

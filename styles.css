@@ -277,6 +277,7 @@ p {
 
 .visual-grid {
   position: absolute;
+  z-index: 0;
   inset: 0;
   background-image:
     linear-gradient(rgba(100, 244, 223, 0.08) 1px, transparent 1px),
@@ -311,6 +312,7 @@ p {
 
 .orbit {
   position: absolute;
+  z-index: 1;
   border: 1px solid rgba(100, 244, 223, 0.25);
   border-radius: 50%;
 }
@@ -326,41 +328,37 @@ p {
   transform: rotate(-26deg);
 }
 
-.node {
+.orbit-motion {
   position: absolute;
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  background: var(--cyan);
-  box-shadow: 0 0 28px rgba(100, 244, 223, 0.9);
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
-.node-a {
-  top: 22%;
-  left: 22%;
+.moving-node {
+  filter: drop-shadow(0 0 12px currentColor) drop-shadow(0 0 26px currentColor);
 }
 
-.node-b {
-  top: 36%;
-  right: 23%;
-  background: var(--green);
-  box-shadow: 0 0 28px rgba(140, 255, 184, 0.9);
+.moving-node.cyan {
+  color: rgba(100, 244, 223, 0.9);
+  fill: var(--cyan);
 }
 
-.node-c {
-  bottom: 29%;
-  left: 31%;
-  background: var(--amber);
-  box-shadow: 0 0 28px rgba(245, 197, 107, 0.72);
+.moving-node.green {
+  color: rgba(140, 255, 184, 0.9);
+  fill: var(--green);
 }
 
-.node-d {
-  right: 19%;
-  bottom: 21%;
+.moving-node.amber {
+  color: rgba(245, 197, 107, 0.82);
+  fill: var(--amber);
 }
 
 .data-card {
   position: absolute;
+  z-index: 4;
   width: min(260px, 58%);
   padding: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
