@@ -643,6 +643,40 @@ textarea:focus {
   font-size: 24px;
 }
 
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 18;
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  background: rgba(5, 10, 11, 0.78);
+  box-shadow: 0 18px 52px rgba(0, 0, 0, 0.36);
+  color: var(--cyan);
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 800;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(14px);
+  transition: opacity 180ms ease, transform 180ms ease, background 180ms ease;
+  backdrop-filter: blur(14px);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: rgba(100, 244, 223, 0.13);
+}
+
 @media (max-width: 960px) {
   .hero,
   .contact {
@@ -768,5 +802,12 @@ textarea:focus {
   .site-footer {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .back-to-top {
+    right: 16px;
+    bottom: 16px;
+    width: 48px;
+    height: 48px;
   }
 }

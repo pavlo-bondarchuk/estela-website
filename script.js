@@ -1,6 +1,7 @@
 const header = document.querySelector("[data-header]");
 const nav = document.querySelector("[data-nav]");
 const menuToggle = document.querySelector("[data-menu-toggle]");
+const backToTop = document.querySelector("[data-back-to-top]");
 const navLinks = [...document.querySelectorAll(".site-nav a")];
 const sections = navLinks
   .map((link) => document.querySelector(link.getAttribute("href")))
@@ -8,6 +9,7 @@ const sections = navLinks
 
 function updateHeaderState() {
   header.classList.toggle("scrolled", window.scrollY > 24);
+  backToTop.classList.toggle("visible", window.scrollY > 520);
 }
 
 menuToggle.addEventListener("click", () => {
@@ -20,6 +22,10 @@ navLinks.forEach((link) => {
     nav.classList.remove("open");
     menuToggle.setAttribute("aria-expanded", "false");
   });
+});
+
+backToTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
 const observer = new IntersectionObserver(
